@@ -14,14 +14,15 @@
    - [2.1 WebSocketMessageDao](#21-websocketmessagedao)
    - [2.2 AppDatabase](#22-appdatabase)
    - [2.3 WebSocketRepositoryImpl](#23-websocketrepositoryimpl)
+   - [2.4 WebSocketClient](#31-websocketclient)
+
 3. [Module: domain](#module-domain)
-   - [3.1 WebSocketClient](#31-websocketclient)
-   - [3.2 WebSocketRepository](#32-websocketrepository)
-   - [3.3 CacheMessagesUseCase](#33-cachemessagesusecase)
-   - [3.4 CloseWebSocketConnection](#34-closewebsocketconnection)
-   - [3.5 ReceiveCachedMessagesUseCase](#35-receivecachedmessagesusecase)
-   - [3.6 ReceiveMessagesUseCase](#36-receivemessagesusecase)
-   - [3.7 SendMessageUseCase](#37-sendmessageusecase)
+   - [3.1 WebSocketRepository](#32-websocketrepository)
+   - [3.2 CacheMessagesUseCase](#33-cachemessagesusecase)
+   - [3.3 CloseWebSocketConnection](#34-closewebsocketconnection)
+   - [3.4 ReceiveCachedMessagesUseCase](#35-receivecachedmessagesusecase)
+   - [3.5 ReceiveMessagesUseCase](#36-receivemessagesusecase)
+   - [3.6 SendMessageUseCase](#37-sendmessageusecase)
 4. [Module: di](#module-di)
 5. [Additional Notes](#additional-notes)
    - [Testing](#testing)
@@ -37,7 +38,7 @@
 
 - **Responsibility:**
   - Entry point of the application.
-  - Hosts the navigation graph and handles UI setup.
+  - Observe the ui with updates recieved from VM.
 
 - **Usage:**
   - Add MainActivity in the application manifest.
@@ -91,9 +92,7 @@
 - **Usage:**
   - Inject WebSocketRepositoryImpl into repositories and use cases.
 
-## Module: domain
-
-### 3.1 WebSocketClient
+### 2.4 WebSocketClient
 
 - **Responsibility:**
   - Handles WebSocket connection and communication.
@@ -102,7 +101,10 @@
 - **Usage:**
   - Use WebSocketClient in the repository to establish and manage WebSocket connections.
 
-### 3.2 WebSocketRepository
+## Module: domain
+
+
+### 3.1 WebSocketRepository
 
 - **Responsibility:**
   - Defines the contract for managing WebSocket messages.
@@ -111,7 +113,7 @@
 - **Usage:**
   - Inject WebSocketRepository into use cases.
 
-### 3.3 CacheMessagesUseCase
+### 3.2 CacheMessagesUseCase
 
 - **Responsibility:**
   - Use case for caching WebSocket messages locally.
@@ -119,7 +121,7 @@
 - **Usage:**
   - Inject CacheMessagesUseCase where caching of messages is required.
 
-### 3.4 CloseWebSocketConnection
+### 3.3 CloseWebSocketConnection
 
 - **Responsibility:**
   - Use case for closing the WebSocket connection.
@@ -127,7 +129,7 @@
 - **Usage:**
   - Inject CloseWebSocketConnection where closing the WebSocket connection is required.
 
-### 3.5 ReceiveCachedMessagesUseCase
+### 3.4 ReceiveCachedMessagesUseCase
 
 - **Responsibility:**
   - Use case for retrieving locally cached WebSocket messages.
@@ -135,7 +137,7 @@
 - **Usage:**
   - Inject ReceiveCachedMessagesUseCase where retrieving cached messages is required.
 
-### 3.6 ReceiveMessagesUseCase
+### 3.5 ReceiveMessagesUseCase
 
 - **Responsibility:**
   - Use case for receiving WebSocket messages from the server.
@@ -143,7 +145,7 @@
 - **Usage:**
   - Inject ReceiveMessagesUseCase where handling incoming messages is required.
 
-### 3.7 SendMessageUseCase
+### 3.6 SendMessageUseCase
 
 - **Responsibility:**
   - Use case for sending WebSocket messages to the server.
