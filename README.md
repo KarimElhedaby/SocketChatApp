@@ -14,7 +14,7 @@
    - [2.1 WebSocketMessageDao](#21-websocketmessagedao)
    - [2.2 AppDatabase](#22-appdatabase)
    - [2.3 WebSocketRepositoryImpl](#23-websocketrepositoryimpl)
-   - [2.4 WebSocketClient](#31-websocketclient)
+   - [2.4 WebSocketClient](#24-websocketclient)
 
 3. [Module: domain](#module-domain)
    - [3.1 WebSocketRepository](#32-websocketrepository)
