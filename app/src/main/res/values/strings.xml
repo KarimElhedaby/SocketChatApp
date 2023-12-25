@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">socketApp</string>
+    <string name="enter_message_hint">Type Something...</string>
+</resources>
