@@ -1,8 +1,8 @@
 # Socket Chat App
  
  An Android app, with a single screen that will:
-  Connect to a socket server .
-  The user can send messages to this server and listen to incoming messages as well .
+ 1. Connect to a socket server .
+ 2. The user can send messages to this server and listen to incoming messages as well .
 
 ## Table of Contents
 
