@@ -1,179 +1,186 @@
-Certainly! Below is the README content based on the provided documentation template. You can use this in your GitHub repository:
-Project Name
+# Project Name
 
 A brief description of your project.
-Overview
+
+## Overview
 
 Provide a concise overview of your project, including its purpose, key features, and any notable technologies used.
-Table of Contents
 
-    Module: app
-        1.1 MainActivity
-        1.2 MainViewModel
-        1.3 MainAPP.kt
-    Module: data
-        2.1 WebSocketMessageDao
-        2.2 AppDatabase
-        2.3 WebSocketRepositoryImpl
-    Module: domain
-        3.1 WebSocketClient
-        3.2 WebSocketRepository
-        3.3 CacheMessagesUseCase
-        3.4 CloseWebSocketConnection
-        3.5 ReceiveCachedMessagesUseCase
-        3.6 ReceiveMessagesUseCase
-        3.7 SendMessageUseCase
-    Module: di
-    Additional Notes
-        Testing
-        Coroutines Flow
-        Hilt
-        MVVM Architecture
-        Multi-Module Architecture
+## Table of Contents
 
-Module: app
-1.1 MainActivity
+1. [Module: app](#module-app)
+   - [1.1 MainActivity](#11-mainactivity)
+   - [1.2 MainViewModel](#12-mainviewmodel)
+   - [1.3 MainAPP.kt](#13-mainappkt)
+2. [Module: data](#module-data)
+   - [2.1 WebSocketMessageDao](#21-websocketmessagedao)
+   - [2.2 AppDatabase](#22-appdatabase)
+   - [2.3 WebSocketRepositoryImpl](#23-websocketrepositoryimpl)
+3. [Module: domain](#module-domain)
+   - [3.1 WebSocketClient](#31-websocketclient)
+   - [3.2 WebSocketRepository](#32-websocketrepository)
+   - [3.3 CacheMessagesUseCase](#33-cachemessagesusecase)
+   - [3.4 CloseWebSocketConnection](#34-closewebsocketconnection)
+   - [3.5 ReceiveCachedMessagesUseCase](#35-receivecachedmessagesusecase)
+   - [3.6 ReceiveMessagesUseCase](#36-receivemessagesusecase)
+   - [3.7 SendMessageUseCase](#37-sendmessageusecase)
+4. [Module: di](#module-di)
+5. [Additional Notes](#additional-notes)
+   - [Testing](#testing)
+   - [Coroutines Flow](#coroutines-flow)
+   - [Hilt](#hilt)
+   - [MVVM Architecture](#mvvm-architecture)
+   - [Multi-Module Architecture](#multi-module-architecture)
 
-    Responsibility:
-        Entry point of the application.
-        Hosts the navigation graph and handles UI setup.
+## Module: app
 
-    Usage:
-        Add MainActivity in the application manifest.
-        Use MainActivity to launch the application.
+### 1.1 MainActivity
 
-1.2 MainViewModel
+- **Responsibility:**
+  - Entry point of the application.
+  - Hosts the navigation graph and handles UI setup.
 
-    Responsibility:
-        Manages UI-related data and operations.
-        Interacts with the WebSocketRepository to fetch and send messages.
+- **Usage:**
+  - Add MainActivity in the application manifest.
+  - Use MainActivity to launch the application.
 
-    Usage:
-        Use MainViewModel to observe and update UI-related data.
-        Inject the ViewModel into the UI components using Hilt.
+### 1.2 MainViewModel
 
-1.3 MainAPP.kt
+- **Responsibility:**
+  - Manages UI-related data and operations.
+  - Interacts with the WebSocketRepository to fetch and send messages.
 
-    Responsibility:
-        Application class.
-        Initializes Hilt and other global components.
+- **Usage:**
+  - Use MainViewModel to observe and update UI-related data.
+  - Inject the ViewModel into the UI components using Hilt.
 
-    Usage:
-        Add MainAPP to the application manifest as the application class.
+### 1.3 MainAPP.kt
 
-Module: data
-2.1 WebSocketMessageDao
+- **Responsibility:**
+  - Application class.
+  - Initializes Hilt and other global components.
 
-    Responsibility:
-        Data Access Object (DAO) for WebSocket messages.
-        Defines methods to interact with the local database.
+- **Usage:**
+  - Add MainAPP to the application manifest as the application class.
 
-    Usage:
-        Use WebSocketMessageDao to perform CRUD operations on WebSocket messages.
+## Module: data
 
-2.2 AppDatabase
+### 2.1 WebSocketMessageDao
 
-    Responsibility:
-        Local database for storing WebSocket messages.
-        Uses Room Database.
+- **Responsibility:**
+  - Data Access Object (DAO) for WebSocket messages.
+  - Defines methods to interact with the local database.
 
-    Usage:
-        Inject AppDatabase where local storage is required.
+- **Usage:**
+  - Use WebSocketMessageDao to perform CRUD operations on WebSocket messages.
 
-2.3 WebSocketRepositoryImpl
+### 2.2 AppDatabase
 
-    Responsibility:
-        Implements the WebSocketRepository interface.
-        Manages data flow between the local database and the remote WebSocket server.
+- **Responsibility:**
+  - Local database for storing WebSocket messages.
+  - Uses Room Database.
 
-    Usage:
-        Inject WebSocketRepositoryImpl into repositories and use cases.
+- **Usage:**
+  - Inject AppDatabase where local storage is required.
 
-Module: domain
-3.1 WebSocketClient
+### 2.3 WebSocketRepositoryImpl
 
-    Responsibility:
-        Handles WebSocket connection and communication.
-        Provides methods for sending and receiving messages.
+- **Responsibility:**
+  - Implements the WebSocketRepository interface.
+  - Manages data flow between the local database and the remote WebSocket server.
 
-    Usage:
-        Use WebSocketClient in the repository to establish and manage WebSocket connections.
+- **Usage:**
+  - Inject WebSocketRepositoryImpl into repositories and use cases.
 
-3.2 WebSocketRepository
+## Module: domain
 
-    Responsibility:
-        Defines the contract for managing WebSocket messages.
-        Acts as a bridge between the domain and data layers.
+### 3.1 WebSocketClient
 
-    Usage:
-        Inject WebSocketRepository into use cases.
+- **Responsibility:**
+  - Handles WebSocket connection and communication.
+  - Provides methods for sending and receiving messages.
 
-3.3 CacheMessagesUseCase
+- **Usage:**
+  - Use WebSocketClient in the repository to establish and manage WebSocket connections.
 
-    Responsibility:
-        Use case for caching WebSocket messages locally.
+### 3.2 WebSocketRepository
 
-    Usage:
-        Inject CacheMessagesUseCase where caching of messages is required.
+- **Responsibility:**
+  - Defines the contract for managing WebSocket messages.
+  - Acts as a bridge between the domain and data layers.
 
-3.4 CloseWebSocketConnection
+- **Usage:**
+  - Inject WebSocketRepository into use cases.
 
-    Responsibility:
-        Use case for closing the WebSocket connection.
+### 3.3 CacheMessagesUseCase
 
-    Usage:
-        Inject CloseWebSocketConnection where closing the WebSocket connection is required.
+- **Responsibility:**
+  - Use case for caching WebSocket messages locally.
 
-3.5 ReceiveCachedMessagesUseCase
+- **Usage:**
+  - Inject CacheMessagesUseCase where caching of messages is required.
 
-    Responsibility:
-        Use case for retrieving locally cached WebSocket messages.
+### 3.4 CloseWebSocketConnection
 
-    Usage:
-        Inject ReceiveCachedMessagesUseCase where retrieving cached messages is required.
+- **Responsibility:**
+  - Use case for closing the WebSocket connection.
 
-3.6 ReceiveMessagesUseCase
+- **Usage:**
+  - Inject CloseWebSocketConnection where closing the WebSocket connection is required.
 
-    Responsibility:
-        Use case for receiving WebSocket messages from the server.
+### 3.5 ReceiveCachedMessagesUseCase
 
-    Usage:
-        Inject ReceiveMessagesUseCase where handling incoming messages is required.
+- **Responsibility:**
+  - Use case for retrieving locally cached WebSocket messages.
 
-3.7 SendMessageUseCase
+- **Usage:**
+  - Inject ReceiveCachedMessagesUseCase where retrieving cached messages is required.
 
-    Responsibility:
-        Use case for sending WebSocket messages to the server.
+### 3.6 ReceiveMessagesUseCase
 
-    Usage:
-        Inject SendMessageUseCase where sending messages is required.
+- **Responsibility:**
+  - Use case for receiving WebSocket messages from the server.
 
-Module: di
+- **Usage:**
+  - Inject ReceiveMessagesUseCase where handling incoming messages is required.
 
-    Responsibility:
-        Contains Hilt-related configuration and dependency injection modules.
+### 3.7 SendMessageUseCase
 
-    Usage:
-        Include the di module in the application module for Hilt setup.
+- **Responsibility:**
+  - Use case for sending WebSocket messages to the server.
 
-Additional Notes
-Testing
+- **Usage:**
+  - Inject SendMessageUseCase where sending messages is required.
 
-    All components should be unit-tested using appropriate testing frameworks.
-    Use Coroutines Test for testing suspending functions and flows.
+## Module: di
 
-Coroutines Flow
+- **Responsibility:**
+  - Contains Hilt-related configuration and dependency injection modules.
 
-    Utilize Coroutines Flow for handling asynchronous operations.
+- **Usage:**
+  - Include the di module in the application module for Hilt setup.
 
-Hilt
+## Additional Notes
 
-    Utilize Hilt for dependency injection.
+### Testing
 
-MVVM Architecture
+- All components should be unit-tested using appropriate testing frameworks.
+- Use Coroutines Test for testing suspending functions and flows.
 
-    Ensure that the components follow the MVVM architectural pattern.
+### Coroutines Flow
 
-Multi-Module Architecture
+- Utilize Coroutines Flow for handling asynchronous operations.
 
-    Modules should be structured logically, and dependencies between them should be well-defined.
+### Hilt
+
+- Utilize Hilt for dependency injection.
+
+### MVVM Architecture
+
+- Ensure that the components follow the MVVM architectural pattern.
+
+### Multi-Module Architecture
+
+- Modules should be structured logically, and dependencies between them should be well-defined.
+
+This documentation template provides a starting point for describing each component in your Android project. Adjust it as needed based on your project's specific requirements and conventions.
