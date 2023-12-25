@@ -1,4 +1,37 @@
-1. Module: app
+Certainly! Below is the README content based on the provided documentation template. You can use this in your GitHub repository:
+Project Name
+
+A brief description of your project.
+Overview
+
+Provide a concise overview of your project, including its purpose, key features, and any notable technologies used.
+Table of Contents
+
+    Module: app
+        1.1 MainActivity
+        1.2 MainViewModel
+        1.3 MainAPP.kt
+    Module: data
+        2.1 WebSocketMessageDao
+        2.2 AppDatabase
+        2.3 WebSocketRepositoryImpl
+    Module: domain
+        3.1 WebSocketClient
+        3.2 WebSocketRepository
+        3.3 CacheMessagesUseCase
+        3.4 CloseWebSocketConnection
+        3.5 ReceiveCachedMessagesUseCase
+        3.6 ReceiveMessagesUseCase
+        3.7 SendMessageUseCase
+    Module: di
+    Additional Notes
+        Testing
+        Coroutines Flow
+        Hilt
+        MVVM Architecture
+        Multi-Module Architecture
+
+Module: app
 1.1 MainActivity
 
     Responsibility:
@@ -28,7 +61,7 @@
     Usage:
         Add MainAPP to the application manifest as the application class.
 
-2. Module: data
+Module: data
 2.1 WebSocketMessageDao
 
     Responsibility:
@@ -56,7 +89,7 @@
     Usage:
         Inject WebSocketRepositoryImpl into repositories and use cases.
 
-3. Module: domain
+Module: domain
 3.1 WebSocketClient
 
     Responsibility:
@@ -115,7 +148,7 @@
     Usage:
         Inject SendMessageUseCase where sending messages is required.
 
-4. Module: di
+Module: di
 
     Responsibility:
         Contains Hilt-related configuration and dependency injection modules.
@@ -123,22 +156,24 @@
     Usage:
         Include the di module in the application module for Hilt setup.
 
-Additional Notes:
+Additional Notes
+Testing
 
-    Testing:
-        All components should be unit-tested using appropriate testing frameworks.
-        Use Coroutines Test for testing suspending functions and flows.
+    All components should be unit-tested using appropriate testing frameworks.
+    Use Coroutines Test for testing suspending functions and flows.
 
-    Coroutines Flow:
-        Utilize Coroutines Flow for handling asynchronous operations.
+Coroutines Flow
 
-    Hilt:
-        Utilize Hilt for dependency injection.
+    Utilize Coroutines Flow for handling asynchronous operations.
 
-    MVVM Architecture:
-        Ensure that the components follow the MVVM architectural pattern.
+Hilt
 
-    Multi-Module Architecture:
-        Modules should be structured logically, and dependencies between them should be well-defined.
+    Utilize Hilt for dependency injection.
 
-This documentation template provides a starting point for describing each component in your Android project. Adjust it as needed based on your project's specific requirements and conventions.
+MVVM Architecture
+
+    Ensure that the components follow the MVVM architectural pattern.
+
+Multi-Module Architecture
+
+    Modules should be structured logically, and dependencies between them should be well-defined.
