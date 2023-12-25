@@ -1,10 +1,12 @@
-# Project Name
+# Socket Chat App
 
-A brief description of your project.
+ An Android app, with a single screen that will:
+Connect to a socket server .
+The user can send messages to this server and listen to incoming 
+messages as well .
 
 ## Overview
 
-Provide a concise overview of your project, including its purpose, key features, and any notable technologies used.
 
 ## Table of Contents
 
