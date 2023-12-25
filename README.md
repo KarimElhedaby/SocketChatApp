@@ -25,11 +25,12 @@
 4. [Module: di](#module-di)
 5. [Additional Notes](#additional-notes)
    - [Testing](#testing)
+   - [Room_DB](#room_db)
    - [Coroutines Flow](#coroutines-flow)
    - [Hilt](#hilt)
    - [MVVM Architecture](#mvvm-architecture)
    - [Multi-Module Architecture](#multi-module-architecture)
-
+   
 ## Module: app
 
 ### 1.1 MainActivity
@@ -160,10 +161,10 @@
 
 ## Additional Notes
 
-### Testing
 
-- All components should be unit-tested using appropriate testing frameworks.
-- Use Coroutines Test for testing suspending functions and flows.
+### Room_DB
+
+- Room database to cache send and recieved msgs .
 
 ### Coroutines Flow
 
@@ -176,9 +177,10 @@
 ### MVVM Architecture
 
 - Ensure that the components follow the MVVM architectural pattern.
+  
+### Testing
 
-### Multi-Module Architecture
+- All components should be unit-tested using appropriate testing frameworks.
+- Use Coroutines Test for testing suspending functions and flows.
+  
 
-- Modules should be structured logically, and dependencies between them should be well-defined.
-
-This documentation template provides a starting point for describing each component in your Android project. Adjust it as needed based on your project's specific requirements and conventions.
